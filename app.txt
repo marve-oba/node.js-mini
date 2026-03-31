@@ -1,3 +1,6 @@
 hello git as a begginner
 
-also adding new line
+
+
+
+just testing
