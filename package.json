@@ -1,0 +1,15 @@
+{
+  "name": "dockerized-node-k8s-app",
+  "version": "1.0.0",
+  "description": "Minimal Dockerized Node.js app with CI/CD and Kubernetes deployment manifests",
+  "private": true,
+  "type": "commonjs",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
