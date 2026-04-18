@@ -66,3 +66,8 @@ kubectl rollout status deployment/node-app -n node-app
 - 17 years
 - 14 years
 - 11 years
+
+Pipeline images can be found [here](https://www.google.com/search?q=devops+pipeline+pictures&sca_esv=0f7b0b670255fb6d&udm=2&biw=1528&bih=794&sxsrf=ANbL-n5xJumaKfpuBLTlXcqMlZpMZmoDXw%3A1776476796795&ei=fOLiafGiMJiv5NoPotmRsQk&ved=0ahUKEwjx0LLjo_aTAxWYF1kFHaJsJJYQ4dUDCBI&uact=5&oq=devops+pipeline+pictures&gs_lp=Egtnd3Mtd2l6LWltZyIYZGV2b3BzIHBpcGVsaW5lIHBpY3R1cmVzSMpLUM4EWM1EcAF4AJABAJgBsQ6gAelqqgEHNi03LjIuM7gBA8gBAPgBAZgCC6ACslbCAgYQABgHGB7CAgcQIxgnGMkCwgIFEAAYgATCAgQQABgewgIGEAAYChgewgIGEAAYBRgewgIGEAAYCBgemAMAiAYBkgcJMS41LTEuNS40oAfeJrIHBzUtMS41LjS4B6ZWwgcHMC42LjEuNMgHOYAIAA&sclient=gws-wiz-img#sv=CAMSVhoyKhBlLVVSYUJLTDdHTlo5YVpNMg5VUmFCS0w3R05aOWFaTToOdXF0NmV6bEVjMWlMek0gBCocCgZtb3NhaWMSEGUtVVJhQktMN0dOWjlhWk0YADABGAcgs9jRngFKCBABGAEgASgB)
+
+![](/images/1.jpg)
+![](/images/images.jpg)
