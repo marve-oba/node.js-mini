@@ -47,7 +47,7 @@ ghcr.io/<owner>/<repo>:latest
 
 Apply the manifests manually if needed:
 
-```bash
+```yaml
 kubectl apply -f k8s/service.yaml
 sed "s|IMAGE_PLACEHOLDER|ghcr.io/<owner>/<repo>:<git-sha>|g" k8s/deployment.yaml | kubectl apply -f -
 kubectl rollout status deployment/node-app -n node-app
