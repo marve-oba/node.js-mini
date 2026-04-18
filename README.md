@@ -85,3 +85,76 @@ _This is my family_.
 __We are happy family__.
 
 __I love my family__. 
+
+
+
+
+
+
+
+### Trigger Configuration
+
+| Trigger | Detail |
+|---------|--------|
+| **Automatic** | Webhook on push to any branch |
+| **Version Tag** | `<build-number>-<git-short-hash>` (e.g., `42-a1b2c3d`) |
+
+### Quality Gates
+
+| Gate | Tool | Criteria |
+|------|------|----------|
+| Code Quality | SonarQube | Quality gate must pass (no new critical/blocker issues) |
+| Security | Snyk | No HIGH or CRITICAL vulnerabilities |
+| Test Coverage | Vitest + SonarQube | _Minimum coverage threshold (configure per team)_ |
+
+### Notifications
+
+| Event | Channel | Recipients |
+|-------|---------|------------|
+| Build Success | Slack `#healthpulse-builds` | Team |
+| Build Failure | Slack `#healthpulse-builds` + Email | Team + Lead |
+
+---
+
+## CD Pipeline: HealthPulse_Deploy
+
+### Deployment Pipelines
+
+| Pipeline | Target | Trigger | Gate |
+|----------|--------|---------|------|
+| `HealthPulse_Dev_Deploy` | DEV | Automatic on `develop` branch | None |
+| `HealthPulse_UAT_Deploy` | UAT | Automatic on `release/*` branches | None |
+| `HealthPulse_QA_Deploy` | QA | Manual trigger | Approval required |
+| `HealthPulse_Prod_Deploy` | PROD | Manual trigger from `main` | Manager approval required |
+
+### Deployment Flow
+
+```
+develop branch push
+       |
+       v
+  [DEV Deploy] ---> Ansible Tower ---> ECS/EKS DEV
+       |
+release/* branch push
+       |
+       v
+  [UAT Deploy] ---> Ansible Tower ---> ECS/EKS UAT
+       |
+  Manual trigger + approval
+       |
+       v
+  [QA Deploy] ----> Ansible Tower ---> ECS/EKS QA
+       |
+  Manual trigger + manager approval
+       |
+       v
+  [PROD Deploy] --> Ansible Tower ---> ECS/EKS PROD
+```
+
+### Deployment Steps
+
+1. Pull Docker image from Artifactory with specified version tag
+2. Trigger Ansible Tower job template for target environment
+3. Ansible playbook updates ECS task definition / Kubernetes deployment
+4. Wait for service to stabilize (health check passes)
+5. Send deployment notification to Slack
