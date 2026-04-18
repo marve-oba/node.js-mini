@@ -76,8 +76,8 @@ Pipeline images can be found [here](https://www.google.com/search?q=devops+pipel
 |------|-------|-------|
 |`Joseph`|43 years|Male|
 |`Titilope`|42 years|Female|
-|Marvelous|17 years|Female|
-|Joseph Jr|14 years|Male|
+|`<Marvelous>`|17 years|Female|
+|`#Joseph Jr`|14 years|Male|
 |Success|11 years|Male|
 
 _This is my family_.
