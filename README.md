@@ -160,8 +160,10 @@ release/* branch push
 5. Send deployment notification to Slack
 
 
-### This is Obasjoe practicing
+## This is Obasjoe practicing
 
-## Flight from SC to CA was fun practicing
+---
+
+### Flight from SC to CA was fun practicing
 
 1. good job
