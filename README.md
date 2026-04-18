@@ -47,8 +47,22 @@ ghcr.io/<owner>/<repo>:latest
 
 Apply the manifests manually if needed:
 
-```yaml
+```sh
 kubectl apply -f k8s/service.yaml
 sed "s|IMAGE_PLACEHOLDER|ghcr.io/<owner>/<repo>:<git-sha>|g" k8s/deployment.yaml | kubectl apply -f -
 kubectl rollout status deployment/node-app -n node-app
 ```
+
+## This is me creating my list
+
+1. Joseph
+2. Titilope
+3. Marvelous
+4. Joseph Jr.
+5. Success
+
+- 43 years
+- 42 years
+- 17 years
+- 14 years
+- 11 years
